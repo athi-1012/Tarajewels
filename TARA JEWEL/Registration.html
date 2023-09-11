@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+header {
+  background-color: #000000;
+  padding: 20px;
+  color: #fff;
+  font-size:xx-large;
+  margin: -10px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(213, 174, 180);
+  font-family:monospace;
+}
+nav ul li a:hover {
+  text-decoration: none;
+  color: gold;
+}
+body {
+      font-family: Arial, sans-serif;
+      background-image: url("https://img.freepik.com/free-vector/premium-golden-flowers-background-with-text-space_1017-32460.jpg?w=1060&t=st=1694407709~exp=1694408309~hmac=19d4e0f4f55e18b5f5afcc819e6dcf0318100b47f13a2e89a55892d91f8ec67b");
+      background-repeat: no-repeat;
+      background-size: cover;        }
+
+.container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #000000;
+      background-color: rgb(238, 220, 118);
+      padding-top: 50px;
+      padding-right: -10px;
+      color: rgb(0, 0, 0);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background: rgba( 255, 255, 255, 0.35 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+     
+    }
+    .container h2 {
+      text-align: center;
+      padding-bottom: 5px;
+      padding-right: 10px;
+  }
+  .form-group {
+      margin-bottom: 20px;
+     }
+  .form-group label {
+      display: block;
+     }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group input[type="number"],
+    .form-group input[type="number"],
+    .form-group input[type="text"],
+    .form-group input[type="text"],
+    .form-group input[type="number"]
+   {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      }
+    .form-group input[type="submit"] {
+      background-color: #de2c4d;
+      color: #000000;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-group input[type="submit"]:hover {
+      background-color: #88ec0d;
+    }
+</style>
+</head>
+<body>
+ <center><header>
+    <nav>
+      <ul>
+        <li><a href="file:///C:/Users/Athira/Downloads/FULL%20STACK/TARA%20JEWEL/tarajewels.html">HOME</a></li>
+        <li><a href="file:///C:/Users/Athira/Downloads/FULL%20STACK/TARA%20JEWEL/About.html" target="_blank">ABOUT </a></li>
+        <li><a href="file:///C:/Users/Athira/Downloads/FULL%20STACK/TARA%20JEWEL/Collections.html" target="_blank">COLLECTIONS</a></li>
+        <li><a href="https://thegoldmarket.co.uk/wp-content/uploads/2017/01/jewellery-background.jpg"><b><i>REGISTER</i></b></a></li>
+      </ul>
+    </nav>
+  </header></center><br><br><br><br>
+  <div class="container">
+    <h2 style="color: #5f0010; font-family: cursive;">Registration Form</h2>
+    <div class="form-group">
+      <form onsubmit="return validateForm()">
+        <label for="name" ><b>Name:</b></label>
+        <input type="text" id="name" name="name" onblur="validateName()" required>
+        <span id="nameError" class="error"></span>
+        <br><br>
+      
+        <label for="email"><b>Email:</b></label>
+        <input type="email" id="email" name="email" onblur="validateEmail()" required>
+        <span id="emailError" class="error"></span>
+        <br><br>
+
+        <label for="contact"><b>Contact:</b></label>
+        <input type="number" id="contact" name="contact" onblur="validateContact()" required>
+        <span id="contactError" class="error"></span>
+        <br><br>
+
+        <label for="age"><b>Age:</b></label>
+        <input type="number" id="age" name="age" onblur="validateAge()" required>
+        <span id="ageError" class="error"></span>
+        <br><br>
+      
+        <label><b>Gender:</b></label><br>
+        <input type="radio" id="male" name="gender" value="Male" onblur="validateGender()" required> Male
+        <input type="radio" id="female" name="gender" value="Female" onblur="validateGender()" required> Female
+        <span id="genderError" class="error"></span>
+        <br><br><br>
+      
+        <label for="password"><b>Password:</b></label>
+        <input type="password" id="password" name="password" onblur="validatePassword()" required>
+        <span id="passwordError" class="error"></span>
+        <br><br>
+      
+        <label for="confirmPassword"><b>Confirm Password:</b></label>
+        <input type="password" id="confirmPassword" name="confirmPassword" onblur="validateConfirmPassword()" required>
+        <span id="confirmPasswordError" class="error"></span>
+        <br><br>
+      
+      <center><input type="submit" value="Submit"></center>
+      </form>
+      
+    </div>
+    <script>
+      function validateName() {
+        const nameInput = document.getElementById("name");
+        const nameError = document.getElementById("nameError");
+        if (nameInput.value.trim() === "") {
+          nameError.textContent = "Name is required.";
+        } else {
+          nameError.textContent = "";
+        }
+      }
+      
+      function validateEmail() {
+        const emailInput = document.getElementById("email");
+        const emailError = document.getElementById("emailError");
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value)) {
+          emailError.textContent = "Invalid email format.";
+        } else {
+          emailError.textContent = "";
+        }
+      }
+      
+      function validatePassword() {
+        const passwordInput = document.getElementById("password");
+        const passwordError = document.getElementById("passwordError");
+        if (passwordInput.value.length < 8) {
+          passwordError.textContent = "Password must be at least 8 characters long.";
+        } else {
+          passwordError.textContent = "";
+        }
+      }
+      
+      function validateConfirmPassword() {
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const confirmPasswordError = document.getElementById("confirmPasswordError");
+        const passwordInput = document.getElementById("password");
+        if (confirmPasswordInput.value !== passwordInput.value) {
+          confirmPasswordError.textContent = "Passwords do not match.";
+        } else {
+          confirmPasswordError.textContent = "";
+        }
+      }
+      
+      function validateContact() {
+        const contactInput = document.getElementById("contact");
+        const contactError = document.getElementById("contactError");
+        const contactPattern = /^\d{10}$/;
+        if (!contactPattern.test(contactInput.value)) {
+          contactError.textContent = "Invalid contact number.";
+        } else {
+          contactError.textContent = "";
+        }
+      }
+      
+      function validateAge() {
+        const ageInput = document.getElementById("age");
+        const ageError = document.getElementById("ageError");
+        if (ageInput.value < 0 || ageInput.value > 100) {
+          ageError.textContent = "Age must be a number.";
+        } else {
+          ageError.textContent = "";
+        }
+      }
+      
+      function validateGender() {
+        const genderError = document.getElementById("genderError");
+        const maleInput = document.getElementById("male");
+        const femaleInput = document.getElementById("female");
+        if (!maleInput.checked && !femaleInput.checked) {
+          genderError.textContent = "Please select a gender.";
+        } else {
+          genderError.textContent = "";
+        }
+      }
+      
+      function validateForm() {
+        validateName();
+        validateEmail();
+        validatePassword();
+        validateConfirmPassword();
+        validateContact();
+        validateAge();
+        validateGender();
+      
+        const errorElements = document.getElementsByClassName("error");
+        for (const errorElement of errorElements) {
+          if (errorElement.textContent !== "") {
+            return false;
+          }
+        }
+      
+        return true;
+      }
+      </script>
+      
+</body>
+</html>
